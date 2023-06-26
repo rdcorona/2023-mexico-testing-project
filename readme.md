@@ -6,8 +6,8 @@ Make a file `logistic.py` and `test_logistic.py` in the same folder as this
 readme and the `plot_logfun.py` file. Implement the code for the logistic map
 in the `logistic.py` file:
 
-a) Implement the logistic map f(𝑥)=𝑟∗𝑥∗(1−𝑥) . Use `@parametrize`
-to test the function for the following cases:
+a) Implement the logistic map f(𝑥)=𝑟∗𝑥∗(1−𝑥) . Import pytest and use
+`@pytest.mark.parametrize` to test the function for the following cases:
 ```
   x=0.1, r=2.2 => f(x, r)=0.198
   x=0.2, r=3.4 => f(x, r)=0.544
@@ -16,7 +16,7 @@ to test the function for the following cases:
 
 b) Implement the function `iterate_f` that runs `f` for `it`
 iterations, each time passing the result back into f.
-Use `@parametrize` to test the function for the following cases:
+Use `@pytest.mark.parametrize` to test the function for the following cases:
 ```
   x=0.1, r=2.2, it=1 => iterate_f(it, x, r)=[0.198]
   x=0.2, r=3.4, it=4 => iterate_f(it, x, r)=[0.544, 0.843418, 0.449019, 0.841163]
@@ -32,9 +32,9 @@ Try with values `r<3`, `r>4` and `3<r<4` to get a feeling for how the function
 behaves differently with different parameters. Note that your input x0 should
 be between 0 and 1.
 
-## Exercise 2 -- Check the convergence of an attractor using randomi testing
+## Exercise 2 -- Check the convergence of an attractor using random testing
 a) Write a randomized test that checks that, for `r=1.5`, all
-starting points converge to the attractor `f(x, r) = 1/3`.
+starting points x0 converge to the same value (attractor) `f(x, r) = 1/3`.
 
 b) Use `pytest.mark` to mark the tests from the previous exercise with one mark
 (they relate to the correct implementation of the logistic map) and the

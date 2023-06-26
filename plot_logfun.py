@@ -23,9 +23,9 @@ def plot_trajectory(n, r, x0, fname="single_trajectory.png"):
     returns
         fig, ax (matplotlib objects)
     """
-    l = iterate_f(n, x0, r)
+    xs = iterate_f(n, x0, r)
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.plot(list(range(n)), l)
+    ax.plot(list(range(n)), xs)
     fig.suptitle('Logistic Function')
 
     fig.savefig(fname)
@@ -57,11 +57,11 @@ def plot_bifurcation(start, end, step, fname="bifurcation.png", it=100000,
     y = []
 
     for r in r_range:
-        l = iterate_f(it, 0.1, r)
-        ll = l[len(l) - last::].copy()
-        lll = np.unique(ll)
-        y.extend(lll)
-        x.extend(np.ones(len(lll)) * r)
+        xs = iterate_f(it, 0.1, r)
+        all_xs = xs[len(xs) - last::].copy()
+        unique_xs = np.unique(all_xs)
+        y.extend(unique_xs)
+        x.extend(np.ones(len(unique_xs)) * r)
 
     fig, ax = plt.subplots(figsize=(20, 10))
     ax.scatter(x, y, s=0.1, color='k')
