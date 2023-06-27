@@ -6,7 +6,7 @@ Make a file `logistic.py` and `test_logistic.py` in the same folder as this
 readme and the `plot_logfun.py` file. Implement the code for the logistic map
 in the `logistic.py` file:
 
-a) Implement the logistic map f(x)=r*x*(1−x) . Import pytest and use
+a) Implement the logistic map f(𝑥)=𝑟∗𝑥∗(1−𝑥) . Import pytest and use
 `@pytest.mark.parametrize` to test the function for the following cases:
 ```
   x=0.1, r=2.2 => f(x, r)=0.198
